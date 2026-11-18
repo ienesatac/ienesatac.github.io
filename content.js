@@ -38,7 +38,7 @@ window.SITE_CONTENT = {
     institutionFull: "The Pennsylvania State University",
     institutionUrl: "https://www.psu.edu/",
     email: "iza5155@psu.edu",
-    avatar: "assets/profile.png",
+    avatar: "assets/profile.jpg",
     avatarAlt: "Portrait of Ibrahim Enes Atac",
     cvPdf: "files/cv.pdf",
     domain: "https://enesatac.org",
