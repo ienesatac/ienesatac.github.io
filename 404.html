@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecting — Ibrahim Enes Atac</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <script>
+    // Automatically redirect legacy Owlstown URLs so existing bookmarks,
+    // search engine links, and job-market materials never break.
+    (function () {
+      var path = window.location.pathname.replace(/\/+$/, "");
+      var legacyMap = {
+        "/pages/8692": "/teaching.html",
+        "/pages/8695": "/public-sociology.html",
+        "/pages/8696": "/index.html",
+        "/media_files/20308": "/files/cv.pdf",
+        "/publications/55116.pdf": "/files/atac-et-al-2026-socius.pdf",
+        "/publications/55914.pdf": "/files/atac-seguin-gorman-2026-current-sociology.pdf",
+        "/publications/61682.pdf": "/files/iceland-silver-atac-2026-ssq.pdf",
+        "/publications/70783.pdf": "/files/atac-adeel-atac-2026-jmir.pdf",
+        "/publications/55104.pdf": "/files/atac-seguin-gorman-2025-ijcs.pdf",
+        "/publications/55103.pdf": "/files/atac-adler-2025-social-forces.pdf"
+      };
+      if (legacyMap[path]) {
+        window.location.replace(legacyMap[path]);
+        return;
+      }
+      if (path.indexOf("/publications/") === 0) {
+        window.location.replace("/publications.html");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <main id="main-content" style="max-width: 640px; margin: 5rem auto; padding: 0 1.5rem;">
+    <h1 class="page-title">Page Not Found</h1>
+    <p>The page you requested could not be found, or may have moved during a recent website update.</p>
+    <p>
+      <a class="primary-btn" href="/index.html">Go to Home Page</a>
+      <a class="secondary-btn" href="/publications.html" style="margin-left: 0.5rem;">View Publications</a>
+    </p>
+  </main>
+</body>
+</html>
