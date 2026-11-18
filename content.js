@@ -103,9 +103,7 @@ window.SITE_CONTENT = {
 
     `My recent article in <em>Social Forces</em>, <em>Religious Rebound, Political Backlash, and the Youngest Cohort: Understanding Religious Change in Turkey</em>, received the <a href="https://sssreligion.org/awards-grants/distinguished-article-award/" target="_blank" rel="noopener">2025 Distinguished Article Award from the Society for the Scientific Study of Religion (SSSR)</a>. It also earned the 2025 Lombra Outstanding Graduate Research Award from Penn State’s College of the Liberal Arts, recognizing it as the best social science article published by a graduate student at the Pennsylvania State University.`,
 
-    `I hold an M.A. in Sociology from Penn State, where my master’s thesis on the attitudes of majority and minority group members toward immigrants received the 2024 Huber-Form Award. Before my time at Penn State, I earned an M.A. from the University of Mannheim as a DAAD–TEV scholarship holder, and I completed my B.A. in Sociology at Boğaziçi University.`,
-
-    `My research has been published or is forthcoming in <em>Social Forces</em>, <em>Socius</em>, <em>Demography</em>, <em>Social Science Quarterly</em>, <em>Current Sociology</em>, <em>International Journal of Comparative Sociology</em>, and <em>Journal of Medical Internet Research</em>, and has been featured in several media outlets. Feel free to explore my <a href="cv.html">CV</a> and <a href="publications.html">publications</a> for more details about my research.`
+    `My research has been published or is forthcoming in <em>Social Forces</em>, <em>Socius</em>, <em>Demography</em>, <em>Social Science Quarterly</em>, <em>Current Sociology</em>, <em>International Journal of Comparative Sociology</em>, and <em>Journal of Medical Internet Research</em>, and has been featured in several media outlets. Feel free to explore this website for more details about my research.`
   ],
 
   homeNewsHeading: "Recent News",
