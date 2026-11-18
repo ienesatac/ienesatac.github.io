@@ -151,6 +151,34 @@ window.SITE_CONTENT = {
   ],
 
   publications: [
+   {
+      title: "Health Discourse Regarding Syrian Refugees in Türkiye on X (Formerly Twitter): Longitudinal Sentiment and Stance Analysis",
+      authors: "Ömer Ataç, Abdul Basit Adeel, Ibrahim Enes Atac",
+      venue: "Journal of Medical Internet Research",
+      details: "vol. 28(6)",
+      year: 2026,
+      status: "published",
+      topics: ["Immigration", "Intergroup Relations"],
+      methods: ["Computational & Text", "Longitudinal"],
+      contexts: ["Türkiye"],
+      pdf: "files/atac-adeel-atac-2026-jmir.pdf",
+      doi: "https://doi.org/10.2196/93227",
+      abstract: `Background: Since 2011, Türkiye has become the primary destination for Syrian refugees. Although health care is a fundamental human right, public discourse surrounding refugee health services can influence policy and social cohesion.\n\nObjective: The objective of our study was to examine 14 years of health-related discourse in Türkiye regarding Syrian refugees on platform X (formerly Twitter) to identify evolving patterns in sentiment, stance, and key grievances.\n\nMethods: From a dataset of 4.5 million tweets (2009-2022), 116,172 health-related posts were identified. We used a fine-tuned Turkish Bidirectional Encoder Representations from Transformers (BERT)–based large language model to perform multitask classification for sentiment, stance, and health topics. Tweets were categorized into 5 domains: provision of health care services, financing and coverage, human resources, public health and disease prevention, and access to medications and pharmaceutical services. Lift scores and heatmaps were used to analyze the relationship between keywords and public attitudes.\n\nResults: The fine-tuned Turkish BERT model achieved high classification performance, with a weighted F1-score of 0.814 for sentiment and 0.757 for stance detection. Public discourse shifted from neutral or positive tones in 2011 to increasingly negative tones over time. By 2021, negative sentiment reached 79.9% (13,148/16,456), and the anti-refugee stance peaked at 78.3% (12,882/16,456). Prominent topics evolved from provision of health care services (38/80, 47.5% in 2011) to public health and disease prevention (9428/16,456, 57.3% in 2021) and human resources (13,969/40,368, 34.6% in 2022). High lift scores revealed that an anti-refugee stance was strongly associated with keywords such as “appointment,” “vaccine,” and “free.”\n\nConclusions: There is a marked and consistent rise in anti-refugee sentiment within Turkish digital health discourse, often fueled by misinformation and perceived systemic strain. Public health authorities should prioritize evidence-based communication strategies to counter digital polarization and ensure the legibility of health policies to the host population.`
+    },
+   {
+      title: "Cultural Solidarity, Economic Threat: How Discrimination Influences Anti-Immigrant Attitudes",
+      authors: "Ibrahim Enes Atac, Charles Seguin, Brandon Gorman",
+      venue: "Current Sociology",
+      details: "",
+      year: 2026,
+      status: "published",
+      topics: ["Immigration", "Intergroup Relations", "Political Attitudes"],
+      methods: ["Survey", "Multilevel"],
+      contexts: ["Cross-National"],
+      pdf: "files/atac-seguin-gorman-2026-current-sociology.pdf",
+      doi: "https://doi.org/10.1177/00113921261467791",
+      abstract: `Studies on the attitudes of minorities toward immigrants have produced mixed results, as while some suggest that minorities are more tolerant of immigrants, others find minorities resemble majority groups in their attitudes. We argue these inconsistencies stem from differences in how people evaluate immigrants’ cultural and economic impacts. Using data from the International Social Survey Programme linked with group-level measures of political, economic, religious, and linguistic discrimination from the Minorities at Risk and Ethnic Power Relations datasets, we examine how minority and majority groups assess immigration across economic and cultural dimensions. We find that minority group members are significantly less likely than majority group members to view immigrants as a cultural threat, yet they express similar levels of concern about the economic impacts of immigration. This suggests that minority groups may feel a sense of solidarity with immigrants based on shared experiences of discrimination, which reduces perceptions of immigrants as a cultural threat, even as their concerns about economic competition remain similar to those of majority groups. We conclude that anti-immigrant sentiment is multidimensional, which helps clarify how social position shapes attitudes.`
+    },
     {
       title: "What Would Jesus Fund? Christian Nationalism and Americans’ Views on Government Spending",
       authors: "Ibrahim Enes Atac, Lena Kunjan, Forrest Lovette, Samuel L. Perry",
@@ -166,20 +194,6 @@ window.SITE_CONTENT = {
       abstract: `Research on government spending focuses primarily on the roles of partisanship, ideology, and in-group self-interest. Beyond these, the authors propose that religiopolitical schemas have an independent (though interrelated) role in shaping Americans’ conceptions of government’s purpose, beneficiaries, and resource allocation. Conceiving of “Christian nationalism” as a religiopolitical schema rooted in “us versus them” hierarchical conceptions of social order and neoliberal ideas of government, the authors theorize Christian nationalism is associated with greater American support for government spending on controlling and punishing problematized populations, less spending on vulnerable populations and out-group interests, and no systematic preference when the in-group or out-group interest is less salient. Data from the 2021 General Social Survey affirm these expectations. Even after accounting for partisanship, ideology, and White victimhood, Christian nationalism is associated with support for greater government spending on crime, law enforcement, and the military and less spending on Blacks, safety nets, science, the environment, and other Democratic issues but is unrelated to spending on parks, highways, social security, and other areas in which in-group distinctions are less salient. Interactions reveal that Christian nationalism is more strongly associated with views on government spending among non-Republicans and nonconservatives. The authors discuss how Christian nationalist rhetoric is associated with spending priorities that reflect inequalities across multiple domains.`
     },
     {
-      title: "Cultural Solidarity, Economic Threat: How Discrimination Influences Anti-Immigrant Attitudes",
-      authors: "Ibrahim Enes Atac, Charles Seguin, Brandon Gorman",
-      venue: "Current Sociology",
-      details: "",
-      year: 2026,
-      status: "published",
-      topics: ["Immigration", "Intergroup Relations", "Political Attitudes"],
-      methods: ["Survey", "Multilevel"],
-      contexts: ["Cross-National"],
-      pdf: "files/atac-seguin-gorman-2026-current-sociology.pdf",
-      doi: "https://doi.org/10.1177/00113921261467791",
-      abstract: `Studies on the attitudes of minorities toward immigrants have produced mixed results, as while some suggest that minorities are more tolerant of immigrants, others find minorities resemble majority groups in their attitudes. We argue these inconsistencies stem from differences in how people evaluate immigrants’ cultural and economic impacts. Using data from the International Social Survey Programme linked with group-level measures of political, economic, religious, and linguistic discrimination from the Minorities at Risk and Ethnic Power Relations datasets, we examine how minority and majority groups assess immigration across economic and cultural dimensions. We find that minority group members are significantly less likely than majority group members to view immigrants as a cultural threat, yet they express similar levels of concern about the economic impacts of immigration. This suggests that minority groups may feel a sense of solidarity with immigrants based on shared experiences of discrimination, which reduces perceptions of immigrants as a cultural threat, even as their concerns about economic competition remain similar to those of majority groups. We conclude that anti-immigrant sentiment is multidimensional, which helps clarify how social position shapes attitudes.`
-    },
-    {
       title: "Moral Intuitions and Support for Immigration",
       authors: "John Iceland, Eric Silver, Ibrahim Enes Atac",
       venue: "Social Science Quarterly",
@@ -192,20 +206,6 @@ window.SITE_CONTENT = {
       pdf: "files/iceland-silver-atac-2026-ssq.pdf",
       doi: "https://doi.org/10.1111/ssqu.70146",
       abstract: `Introduction: Attitudes toward immigration are often shaped by whether immigrants are perceived as a threat to one's racial, ethnic, or nativity group status. Yet recent research shows that such perceptions vary not only between different groups but also within them. Drawing on Moral Foundations Theory, our study investigates the moral intuitions that lead some individuals to view immigrants as threats and others to see them as deserving of care and support.\n\nMethods: Using data from a national YouGov survey of 4000 US respondents, we examined the association between moral intuitions and attitudes toward immigration, including whether immigration should be a human right and support for higher levels of immigration.\n\nResults: We find that people with strong individualizing intuitions—including those emphasizing care and fairness—are more likely to support immigration. In contrast, those with strong binding intuitions—especially those emphasizing a respect for authority and sanctity—are less supportive, likely reflecting concerns about maintaining the rule of law and apprehensions about outsiders.\n\nConclusion: These findings highlight the importance of moral frameworks in shaping public attitudes toward immigration. Differences in individualizing versus binding moral intuitions help explain why some individuals view immigrants primarily through a lens of care and fairness, while others emphasize social order and the importance of maintaining boundaries.`
-    },
-    {
-      title: "Health Discourse Regarding Syrian Refugees in Türkiye on X (Formerly Twitter): Longitudinal Sentiment and Stance Analysis",
-      authors: "Ömer Ataç, Abdul Basit Adeel, Ibrahim Enes Atac",
-      venue: "Journal of Medical Internet Research",
-      details: "vol. 28(6)",
-      year: 2026,
-      status: "published",
-      topics: ["Immigration", "Intergroup Relations"],
-      methods: ["Computational & Text", "Longitudinal"],
-      contexts: ["Türkiye"],
-      pdf: "files/atac-adeel-atac-2026-jmir.pdf",
-      doi: "https://doi.org/10.2196/93227",
-      abstract: `Background: Since 2011, Türkiye has become the primary destination for Syrian refugees. Although health care is a fundamental human right, public discourse surrounding refugee health services can influence policy and social cohesion.\n\nObjective: The objective of our study was to examine 14 years of health-related discourse in Türkiye regarding Syrian refugees on platform X (formerly Twitter) to identify evolving patterns in sentiment, stance, and key grievances.\n\nMethods: From a dataset of 4.5 million tweets (2009-2022), 116,172 health-related posts were identified. We used a fine-tuned Turkish Bidirectional Encoder Representations from Transformers (BERT)–based large language model to perform multitask classification for sentiment, stance, and health topics. Tweets were categorized into 5 domains: provision of health care services, financing and coverage, human resources, public health and disease prevention, and access to medications and pharmaceutical services. Lift scores and heatmaps were used to analyze the relationship between keywords and public attitudes.\n\nResults: The fine-tuned Turkish BERT model achieved high classification performance, with a weighted F1-score of 0.814 for sentiment and 0.757 for stance detection. Public discourse shifted from neutral or positive tones in 2011 to increasingly negative tones over time. By 2021, negative sentiment reached 79.9% (13,148/16,456), and the anti-refugee stance peaked at 78.3% (12,882/16,456). Prominent topics evolved from provision of health care services (38/80, 47.5% in 2011) to public health and disease prevention (9428/16,456, 57.3% in 2021) and human resources (13,969/40,368, 34.6% in 2022). High lift scores revealed that an anti-refugee stance was strongly associated with keywords such as “appointment,” “vaccine,” and “free.”\n\nConclusions: There is a marked and consistent rise in anti-refugee sentiment within Turkish digital health discourse, often fueled by misinformation and perceived systemic strain. Public health authorities should prioritize evidence-based communication strategies to counter digital polarization and ensure the legibility of health policies to the host population.`
     },
     {
       title: "The Wages of Ethnic Power: Socioeconomic Status, Group Threat, and Anti-Immigrant Attitudes in Western Europe",
