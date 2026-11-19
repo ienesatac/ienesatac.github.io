@@ -298,6 +298,14 @@
       });
     }
 
+    // Assign permanent reverse-chronological numbers (N .. 1) to published articles
+    // so Paper #1 is the earliest publication and numbers stay fixed when filtering.
+    const allPublished = C.publications.filter((p) => p.status === "published");
+    const pubNumberMap = new Map();
+    allPublished.forEach((pub, idx) => {
+      pubNumberMap.set(pub, allPublished.length - idx);
+    });
+
     function renderFiltered() {
       const anyActive = hasAnyActiveFilter();
       const filtered = C.publications.filter(matchesFilters);
@@ -309,88 +317,143 @@
       ];
 
       let absCounter = 0;
+
+      function renderPubItem(pub, titleTag) {
+        absCounter += 1;
+        const absId = `pub-abs-${absCounter}`;
+        const pubNum = pubNumberMap.get(pub);
+
+        // Venue line
+        const venueParts = [];
+        if (pub.venue) venueParts.push(`<em>${escapeHtml(pub.venue)}</em>`);
+        if (pub.details) venueParts.push(escapeHtml(pub.details));
+        if (pub.year) venueParts.push(escapeHtml(pub.year));
+        const venueHtml = venueParts.length
+          ? `<p class="pub-venue">${venueParts.join(", ")}</p>`
+          : "";
+
+        // Awards
+        const awardsHtml =
+          Array.isArray(pub.awards) && pub.awards.length
+            ? `<div class="pub-awards">${pub.awards
+                .map((a) => `<span class="award-badge">&#9733; ${escapeHtml(a)}</span>`)
+                .join("")}</div>`
+            : "";
+
+        // Action buttons
+        const actions = [];
+        if (pub.abstract) {
+          actions.push(
+            `<button type="button" class="pub-btn abs-toggle" aria-expanded="false" aria-controls="${absId}">Abstract &#9656;</button>`
+          );
+        }
+        if (pub.pdf) {
+          actions.push(
+            `<a class="pub-btn" href="${escapeHtml(pub.pdf)}" target="_blank" rel="noopener" aria-label="PDF for ${escapeHtml(pub.title)}">PDF</a>`
+          );
+        }
+        if (pub.doi) {
+          actions.push(
+            `<a class="pub-btn" href="${escapeHtml(pub.doi)}" target="_blank" rel="noopener" aria-label="Journal DOI link for ${escapeHtml(pub.title)}">DOI</a>`
+          );
+        }
+        if (pub.code) {
+          actions.push(
+            `<a class="pub-btn" href="${escapeHtml(pub.code)}" target="_blank" rel="noopener">Code &amp; Data</a>`
+          );
+        }
+
+        const actionsHtml = actions.length
+          ? `<div class="pub-actions">${actions.join("")}</div>`
+          : "";
+
+        const abstractParagraphs = pub.abstract
+          ? pub.abstract
+              .split(/\n\s*\n/)
+              .map((para) => `<p>${escapeHtml(para.trim())}</p>`)
+              .join("")
+          : "";
+
+        const abstractHtml = pub.abstract
+          ? `<div id="${absId}" class="pub-abstract" hidden>${abstractParagraphs}</div>`
+          : "";
+
+        const primaryLink = pub.doi || pub.pdf || "";
+        const titleHtml = primaryLink
+          ? `<a href="${escapeHtml(primaryLink)}" target="_blank" rel="noopener">${escapeHtml(pub.title)}</a>`
+          : escapeHtml(pub.title);
+
+        if (pubNum) {
+          return `
+            <li class="pub-item is-numbered">
+              <span class="pub-num">${pubNum}.</span>
+              <div class="pub-item-body">
+                <${titleTag} class="pub-title">${titleHtml}</${titleTag}>
+                <p class="pub-authors">${formatAuthors(pub.authors)}</p>
+                ${venueHtml}
+                ${awardsHtml}
+                ${actionsHtml}
+                ${abstractHtml}
+              </div>
+            </li>
+          `;
+        }
+
+        return `
+          <li class="pub-item">
+            <${titleTag} class="pub-title">${titleHtml}</${titleTag}>
+            <p class="pub-authors">${formatAuthors(pub.authors)}</p>
+            ${venueHtml}
+            ${awardsHtml}
+            ${actionsHtml}
+            ${abstractHtml}
+          </li>
+        `;
+      }
+
       const groupsHtml = groups
         .map((group) => {
           const items = filtered.filter((p) => p.status === group.key);
           if (!items.length) return "";
 
-          const listHtml = items
-            .map((pub) => {
-              absCounter += 1;
-              const absId = `pub-abs-${absCounter}`;
-
-              // Venue line
-              const venueParts = [];
-              if (pub.venue) venueParts.push(`<em>${escapeHtml(pub.venue)}</em>`);
-              if (pub.details) venueParts.push(escapeHtml(pub.details));
-              if (pub.year) venueParts.push(escapeHtml(pub.year));
-              const venueHtml = venueParts.length
-                ? `<p class="pub-venue">${venueParts.join(", ")}</p>`
-                : "";
-
-              // Awards
-              const awardsHtml =
-                Array.isArray(pub.awards) && pub.awards.length
-                  ? `<div class="pub-awards">${pub.awards
-                      .map((a) => `<span class="award-badge">&#9733; ${escapeHtml(a)}</span>`)
-                      .join("")}</div>`
-                  : "";
-
-              // Action buttons
-              const actions = [];
-              if (pub.abstract) {
-                actions.push(
-                  `<button type="button" class="pub-btn abs-toggle" aria-expanded="false" aria-controls="${absId}">Abstract &#9656;</button>`
-                );
+          // Group published articles by year (descending: 2026, 2025, ...)
+          if (group.key === "published") {
+            const yearBuckets = [];
+            const yearMap = new Map();
+            items.forEach((pub) => {
+              const yr = String(pub.year || "Other");
+              if (!yearMap.has(yr)) {
+                const bucket = { year: yr, items: [] };
+                yearMap.set(yr, bucket);
+                yearBuckets.push(bucket);
               }
-              if (pub.pdf) {
-                actions.push(
-                  `<a class="pub-btn" href="${escapeHtml(pub.pdf)}" target="_blank" rel="noopener" aria-label="PDF for ${escapeHtml(pub.title)}">PDF</a>`
-                );
-              }
-              if (pub.doi) {
-                actions.push(
-                  `<a class="pub-btn" href="${escapeHtml(pub.doi)}" target="_blank" rel="noopener" aria-label="Journal DOI link for ${escapeHtml(pub.title)}">DOI</a>`
-                );
-              }
-              if (pub.code) {
-                actions.push(
-                  `<a class="pub-btn" href="${escapeHtml(pub.code)}" target="_blank" rel="noopener">Code &amp; Data</a>`
-                );
-              }
+              yearMap.get(yr).items.push(pub);
+            });
 
-              const actionsHtml = actions.length
-                ? `<div class="pub-actions">${actions.join("")}</div>`
-                : "";
+            yearBuckets.sort((a, b) => Number(b.year || 0) - Number(a.year || 0));
 
-              const abstractParagraphs = pub.abstract
-                ? pub.abstract
-                    .split(/\n\s*\n/)
-                    .map((para) => `<p>${escapeHtml(para.trim())}</p>`)
-                    .join("")
-                : "";
+            const yearsHtml = yearBuckets
+              .map(
+                (bucket) => `
+                  <div class="pub-year-block">
+                    <h4 class="pub-year-heading">${escapeHtml(bucket.year)}</h4>
+                    <ul class="pub-list">
+                      ${bucket.items.map((pub) => renderPubItem(pub, "h5")).join("")}
+                    </ul>
+                  </div>
+                `
+              )
+              .join("");
 
-              const abstractHtml = pub.abstract
-                ? `<div id="${absId}" class="pub-abstract" hidden>${abstractParagraphs}</div>`
-                : "";
+            return `
+              <section class="pub-group" aria-label="${escapeHtml(group.label)}">
+                <h3 class="pub-group-heading">${escapeHtml(group.label)}</h3>
+                ${yearsHtml}
+              </section>
+            `;
+          }
 
-              const primaryLink = pub.doi || pub.pdf || "";
-              const titleHtml = primaryLink
-                ? `<a href="${escapeHtml(primaryLink)}" target="_blank" rel="noopener">${escapeHtml(pub.title)}</a>`
-                : escapeHtml(pub.title);
-
-              return `
-                <li class="pub-item">
-                  <h4 class="pub-title">${titleHtml}</h4>
-                  <p class="pub-authors">${formatAuthors(pub.authors)}</p>
-                  ${venueHtml}
-                  ${awardsHtml}
-                  ${actionsHtml}
-                  ${abstractHtml}
-                </li>
-              `;
-            })
-            .join("");
+          const listHtml = items.map((pub) => renderPubItem(pub, "h4")).join("");
 
           return `
             <section class="pub-group" aria-label="${escapeHtml(group.label)}">
