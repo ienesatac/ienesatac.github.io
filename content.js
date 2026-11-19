@@ -121,10 +121,8 @@ window.SITE_CONTENT = {
       key: "topics",
       label: "Topic",
       options: [
-        "Immigration",
-        "Intergroup Relations",
-        "Religion & Nationalism",
-        "Political Attitudes",
+        "Immigration & Intergroup Relations",
+        "Religion & Politics",
         "Science & Knowledge"
       ]
     },
@@ -151,28 +149,28 @@ window.SITE_CONTENT = {
   ],
 
   publications: [
-   {
+    {
       title: "Health Discourse Regarding Syrian Refugees in Türkiye on X (Formerly Twitter): Longitudinal Sentiment and Stance Analysis",
       authors: "Ömer Ataç, Abdul Basit Adeel, Ibrahim Enes Atac",
       venue: "Journal of Medical Internet Research",
       details: "vol. 28(6)",
       year: 2026,
       status: "published",
-      topics: ["Immigration", "Intergroup Relations"],
+      topics: ["Immigration & Intergroup Relations"],
       methods: ["Computational & Text", "Longitudinal"],
       contexts: ["Türkiye"],
       pdf: "files/atac-adeel-atac-2026-jmir.pdf",
       doi: "https://doi.org/10.2196/93227",
       abstract: `Background: Since 2011, Türkiye has become the primary destination for Syrian refugees. Although health care is a fundamental human right, public discourse surrounding refugee health services can influence policy and social cohesion.\n\nObjective: The objective of our study was to examine 14 years of health-related discourse in Türkiye regarding Syrian refugees on platform X (formerly Twitter) to identify evolving patterns in sentiment, stance, and key grievances.\n\nMethods: From a dataset of 4.5 million tweets (2009-2022), 116,172 health-related posts were identified. We used a fine-tuned Turkish Bidirectional Encoder Representations from Transformers (BERT)–based large language model to perform multitask classification for sentiment, stance, and health topics. Tweets were categorized into 5 domains: provision of health care services, financing and coverage, human resources, public health and disease prevention, and access to medications and pharmaceutical services. Lift scores and heatmaps were used to analyze the relationship between keywords and public attitudes.\n\nResults: The fine-tuned Turkish BERT model achieved high classification performance, with a weighted F1-score of 0.814 for sentiment and 0.757 for stance detection. Public discourse shifted from neutral or positive tones in 2011 to increasingly negative tones over time. By 2021, negative sentiment reached 79.9% (13,148/16,456), and the anti-refugee stance peaked at 78.3% (12,882/16,456). Prominent topics evolved from provision of health care services (38/80, 47.5% in 2011) to public health and disease prevention (9428/16,456, 57.3% in 2021) and human resources (13,969/40,368, 34.6% in 2022). High lift scores revealed that an anti-refugee stance was strongly associated with keywords such as “appointment,” “vaccine,” and “free.”\n\nConclusions: There is a marked and consistent rise in anti-refugee sentiment within Turkish digital health discourse, often fueled by misinformation and perceived systemic strain. Public health authorities should prioritize evidence-based communication strategies to counter digital polarization and ensure the legibility of health policies to the host population.`
     },
-   {
+    {
       title: "Cultural Solidarity, Economic Threat: How Discrimination Influences Anti-Immigrant Attitudes",
       authors: "Ibrahim Enes Atac, Charles Seguin, Brandon Gorman",
       venue: "Current Sociology",
       details: "",
       year: 2026,
       status: "published",
-      topics: ["Immigration", "Intergroup Relations", "Political Attitudes"],
+      topics: ["Immigration & Intergroup Relations"],
       methods: ["Survey", "Multilevel"],
       contexts: ["Cross-National"],
       pdf: "files/atac-seguin-gorman-2026-current-sociology.pdf",
@@ -186,7 +184,7 @@ window.SITE_CONTENT = {
       details: "",
       year: 2026,
       status: "published",
-      topics: ["Religion & Nationalism", "Political Attitudes", "Intergroup Relations"],
+      topics: ["Religion & Politics"],
       methods: ["Survey"],
       contexts: ["United States"],
       pdf: "files/atac-et-al-2026-socius.pdf",
@@ -200,7 +198,7 @@ window.SITE_CONTENT = {
       details: "vol. 107, e70146",
       year: 2026,
       status: "published",
-      topics: ["Immigration", "Political Attitudes"],
+      topics: ["Immigration & Intergroup Relations"],
       methods: ["Survey"],
       contexts: ["United States"],
       pdf: "files/iceland-silver-atac-2026-ssq.pdf",
@@ -214,7 +212,7 @@ window.SITE_CONTENT = {
       details: "",
       year: 2025,
       status: "published",
-      topics: ["Immigration", "Intergroup Relations", "Political Attitudes"],
+      topics: ["Immigration & Intergroup Relations"],
       methods: ["Survey", "Multilevel"],
       contexts: ["Cross-National", "Europe"],
       pdf: "files/atac-seguin-gorman-2025-ijcs.pdf",
@@ -228,7 +226,7 @@ window.SITE_CONTENT = {
       details: "vol. 103(3), pp. 1144–1166",
       year: 2025,
       status: "published",
-      topics: ["Religion & Nationalism", "Political Attitudes"],
+      topics: ["Religion & Politics"],
       methods: ["Survey", "Longitudinal"],
       contexts: ["Türkiye"],
       awards: [
@@ -272,7 +270,7 @@ window.SITE_CONTENT = {
       details: "",
       year: "",
       status: "under_review",
-      topics: ["Religion & Nationalism", "Political Attitudes"],
+      topics: ["Religion & Politics"],
       methods: ["Survey", "Multilevel"],
       contexts: ["Cross-National"]
     },
@@ -283,7 +281,7 @@ window.SITE_CONTENT = {
       details: "",
       year: "",
       status: "under_review",
-      topics: ["Science & Knowledge", "Political Attitudes"],
+      topics: ["Science & Knowledge"],
       methods: ["Survey", "Multilevel"],
       contexts: ["Cross-National"]
     }
