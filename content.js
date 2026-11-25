@@ -272,7 +272,10 @@ window.SITE_CONTENT = {
       status: "under_review",
       topics: ["Religion & Politics"],
       methods: ["Survey", "Multilevel"],
-      contexts: ["Cross-National"]
+      contexts: ["Cross-National"],
+      grants: [
+        "Global Religious Futures Research Grant, Pew Research Center–John Templeton Foundation"
+      ]
     },
     {
       title: "Is Science a World Culture? Restricted Actorhood and Public Trust in Science",
@@ -283,7 +286,10 @@ window.SITE_CONTENT = {
       status: "under_review",
       topics: ["Science & Knowledge"],
       methods: ["Survey", "Multilevel"],
-      contexts: ["Cross-National"]
+      contexts: ["Cross-National"],
+      grants: [
+        "McCourtney Institute for Democracy Research Grant"
+      ]
     }
   ],
 
